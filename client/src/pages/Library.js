@@ -69,10 +69,12 @@ const Library = () => {
                       ) : null}
                       <Card.Body>
                         <Card.Title>{game.title}</Card.Title>
-                        <p className="small">Genre: {game.genres}</p>
-                        <Card.Text>{game.description}</Card.Text>
+                        <Card.Subtitle className="mb-2 text-muted">
+                          Genre: {game.genres}
+                        </Card.Subtitle>
+                        <Card.Text className="small">{game.description}</Card.Text>
                         <Button className="btn-block btn-danger" onClick={() => handleDeleteGame(game.gameId)}>
-                          Delete Game
+                          Remove Game
                         </Button>
                       </Card.Body>
                     </Card>

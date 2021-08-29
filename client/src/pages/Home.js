@@ -114,7 +114,9 @@ const Home = () => {
                       ) : null}
                       <Card.Body>
                         <Card.Title>{game.title}</Card.Title>
-                        <p>Genre: {game.genres}</p>
+                        <Card.Subtitle className="mb-2 text-muted">
+                          Genre: {game.genres}
+                        </Card.Subtitle>
                         <Card.Text className="small">{game.description}</Card.Text>
                         {Auth.loggedIn() && (
                           <Button disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)} className="btn-block btn-info" onClick={() => handleSaveGame(game.gameId)}>
