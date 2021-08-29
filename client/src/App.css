@@ -1,0 +1,25 @@
+body {
+    background-color: var(--secondary-color);
+}
+
+.jumbotron {
+    background-color: var(--primary-color);
+}
+
+.header {
+    text-align: center;
+    color: var(--font-color);
+}
+
+.left-sidebar {
+    padding: 45px;
+}
+
+.genre-section Button {
+    background-color: var(--font-color);
+}
+
+.wrong-page {
+    text-align: center;
+    color: var(--font-color);
+}

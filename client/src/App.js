@@ -3,9 +3,10 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import SearchGames from "./pages/SearchGames";
-import SavedGames from "./pages/SavedGames";
-import Navbar from "./components/Navbar";
+import './App.css';
+import Home from "./pages/Home";
+import Library from "./pages/Library";
+import Navbar from "./components/Navbar/Navbar";
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -27,9 +28,9 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={SearchGames} />
-            <Route exact path="/saved" component={SavedGames} />
-            <Route render={() => <h1 className="display-2">Woops, Wrong Page</h1>} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/saved" component={Library} />
+            <Route render={() => <h1 className="display-2 wrong-page">Woops, Wrong Page</h1>} />
           </Switch>
         </>
       </Router>

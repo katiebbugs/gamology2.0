@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import './Navbar.css';
 
-import Auth from '../utils/auth';
+import SignUpForm from '../Signup/SignupForm';
+import LoginForm from '../Login/LoginForm';
+
+import Auth from '../../utils/auth';
 
 const AppNavbar = () => {
   // set modal display state
@@ -13,7 +15,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar expand='lg' variant="dark" className="navbar">
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             Gamology
@@ -35,18 +37,18 @@ const AppNavbar = () => {
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>
-                  Login/Sign Up
+                  Login / Sign Up
                 </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Modal size='lg' show={showModal} onHide={() => setShowModal(false)} aria-labelledby='signup-modal'>
+      <Modal show={showModal} onHide={() => setShowModal(false)} aria-labelledby='signup-modal'>
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
+              <Nav variant='tabs'>
                 <Nav.Item>
                   <Nav.Link eventKey='login'>
                     Login
